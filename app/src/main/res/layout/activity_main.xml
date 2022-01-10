@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="FFmpeg"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnMp4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compressed mp4 to 3gp"
+        android:textStyle="italic|bold"
+        android:onClick="compressedmp4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.094"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/btnmp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="VIDEO TO AUDIO"
+        android:textSize="15dp"
+        android:onClick="convertMp3"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnMp4"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="@+id/btnMp4"
+        app:layout_constraintTop_toBottomOf="@+id/btnMp4"
+        />
+
+    <Button
+        android:id="@+id/btnstackH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:onClick="horizontal"
+        android:text="STACK HORIZONTAL"
+        android:textSize="15dp"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnmp3" />
+
+    <Button
+        android:id="@+id/btnStackV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="STACK vERITICAL"
+        android:textSize="15dp"
+        android:onClick="vertical"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnstackH"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/btnstackH"
+        app:layout_constraintTop_toBottomOf="@+id/btnstackH" />
+
+    <Button
+        android:id="@+id/btnWaterMark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Watermark(mp4+png)"
+        android:textSize="15dp"
+        android:onClick="watermark"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnStackV"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/btnStackV"
+        app:layout_constraintTop_toBottomOf="@+id/btnStackV" />
+
+    <Button
+        android:id="@+id/btnfade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Fade in Fade out"
+        android:textSize="15dp"
+        android:onClick="fade"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnWaterMark"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/btnWaterMark"
+        app:layout_constraintTop_toBottomOf="@+id/btnWaterMark" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
