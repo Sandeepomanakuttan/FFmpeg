@@ -10,7 +10,6 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="FFmpeg"
         android:textSize="20sp"
@@ -19,91 +18,118 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnMp4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Compressed mp4 to 3gp"
-        android:textStyle="italic|bold"
-        android:onClick="compressedmp4"
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/real"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RelativeLayout
+        android:id="@+id/real"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.094"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintTop_toBottomOf="@+id/videoView"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnmp3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="VIDEO TO AUDIO"
-        android:textSize="15dp"
-        android:onClick="convertMp3"
-        android:textStyle="italic|bold"
-        app:layout_constraintEnd_toEndOf="@+id/btnMp4"
-        app:layout_constraintHorizontal_bias="0.619"
-        app:layout_constraintStart_toStartOf="@+id/btnMp4"
-        app:layout_constraintTop_toBottomOf="@+id/btnMp4"
-        />
+        <Button
+            android:id="@+id/btnMp4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:onClick="compressedmp4"
+            android:text="Compressed mp4 to 3gp"
+            android:textSize="7sp"
+            android:textStyle="italic|bold" />
 
-    <Button
-        android:id="@+id/btnstackH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:onClick="horizontal"
-        android:text="STACK HORIZONTAL"
-        android:textSize="15dp"
-        android:textStyle="italic|bold"
+        <Button
+            android:id="@+id/btnmp3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:onClick="convertMp3"
+            android:layout_below="@+id/btnMp4"
+            android:text="VIDEO TO AUDIO"
+            android:layout_marginTop="8dp"
+            android:textSize="7sp"
+            android:textStyle="italic|bold"
+           />
+
+        <Button
+            android:id="@+id/btnstackH"
+            android:layout_below="@+id/btnmp3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:onClick="horizontal"
+            android:text="STACK HORIZONTAL"
+            android:textSize="7sp"
+            android:textStyle="italic|bold" />
+
+        <Button
+            android:id="@+id/btnStackV"
+            android:layout_below="@+id/btnstackH"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:onClick="vertical"
+            android:text="STACK vERITICAL"
+            android:textSize="7sp"
+            android:textStyle="italic|bold" />
+
+        <Button
+            android:id="@+id/btnWaterMark"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:onClick="watermark"
+            android:text="Watermark(mp4+png)"
+            android:textSize="7sp"
+            android:textStyle="italic|bold"
+            android:layout_below="@+id/btnStackV"/>
+
+        <Button
+            android:id="@+id/btnfade"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/btnWaterMark"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="fade"
+            android:text="Fade in Fade out"
+            android:textSize="7sp"
+            android:textStyle="italic|bold" />
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <FrameLayout
+        android:id="@+id/frmout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnmp3" />
+        app:layout_constraintTop_toBottomOf="@+id/videoView">
 
-    <Button
-        android:id="@+id/btnStackV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="STACK vERITICAL"
-        android:textSize="15dp"
-        android:onClick="vertical"
-        android:textStyle="italic|bold"
-        app:layout_constraintEnd_toEndOf="@+id/btnstackH"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/btnstackH"
-        app:layout_constraintTop_toBottomOf="@+id/btnstackH" />
-
-    <Button
-        android:id="@+id/btnWaterMark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Watermark(mp4+png)"
-        android:textSize="15dp"
-        android:onClick="watermark"
-        android:textStyle="italic|bold"
-        app:layout_constraintEnd_toEndOf="@+id/btnStackV"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/btnStackV"
-        app:layout_constraintTop_toBottomOf="@+id/btnStackV" />
-
-    <Button
-        android:id="@+id/btnfade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Fade in Fade out"
-        android:textSize="15dp"
-        android:onClick="fade"
-        android:textStyle="italic|bold"
-        app:layout_constraintEnd_toEndOf="@+id/btnWaterMark"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/btnWaterMark"
-        app:layout_constraintTop_toBottomOf="@+id/btnWaterMark" />
+        <ProgressBar
+            android:id="@+id/prograss"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
